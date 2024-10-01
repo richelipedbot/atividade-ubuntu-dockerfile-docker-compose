@@ -1,0 +1,9 @@
+version: '3'
+services:
+  ubuntu-container:
+    image: ubuntu:latest
+    container_name: ubuntu-compose-container
+    command: >
+      bash -c "apt-get update && apt-get install -y vim &&
+               mkdir -p /home/richeli && vim /home/richeli/Pedbot -c 'wq' &&
+               echo 'Arquivo Pedbot' > /home/richeli/Pedbot && tail -f /dev/null"
